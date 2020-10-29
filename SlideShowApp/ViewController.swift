@@ -12,10 +12,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView : UIImageView!
     
-
-    @IBOutlet weak var button: UIButton!
     
-    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var susumuButton: UIButton!
+    
+    @IBOutlet weak var modoruButton: UIButton!
     
     
     var imageIndex = 0
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
     
     
-
+    
     
     @IBAction func startStop(_ sender: Any) {
         
@@ -77,8 +77,8 @@ class ViewController: UIViewController {
             if self.timer != nil {
                 self.timer.invalidate()
                 self.timer = nil
-                button.isEnabled = true
-                button2.isEnabled = true
+                susumuButton.isEnabled = true
+                modoruButton.isEnabled = true
             }
             
         }
@@ -93,8 +93,8 @@ class ViewController: UIViewController {
             imageIndex += 1
         }
         imageView.image = images[imageIndex]
-        button.isEnabled = false
-        button2.isEnabled = false
+        susumuButton.isEnabled = false
+        modoruButton.isEnabled = false
     }
     
     
@@ -105,8 +105,6 @@ class ViewController: UIViewController {
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
     
-    @IBAction func tapView(_ sender: Any) {
-    }
     
 }
 

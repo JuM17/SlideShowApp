@@ -23,7 +23,6 @@
                                         <state key="normal" title="進む"/>
                                         <connections>
                                             <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9I-D2-47Y"/>
-                                            <action selector="startStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6tB-ef-BKB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO6-eI-m0v">
@@ -59,13 +58,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="qmN-84-cCs" id="uqF-Ms-Aad"/>
-                        <outlet property="button2" destination="iO6-eI-m0v" id="TVA-Uv-aEY"/>
                         <outlet property="imageView" destination="gID-nq-LQT" id="56B-3h-qnt"/>
+                        <outlet property="modoruButton" destination="iO6-eI-m0v" id="TVA-Uv-aEY"/>
+                        <outlet property="susumuButton" destination="qmN-84-cCs" id="uqF-Ms-Aad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="K7J-bl-kx0"/>
                 <tapGestureRecognizer id="SKr-Vz-zBQ">
                     <connections>
                         <action selector="tapView:" destination="BYZ-38-t0r" id="tht-g1-4sL"/>
