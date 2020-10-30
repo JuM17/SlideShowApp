@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView : UIImageView!
     
+    @IBOutlet weak var startStopButton: UIButton!
+    
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
     
     @IBOutlet weak var susumuButton: UIButton!
     
@@ -37,10 +40,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // segueから遷移先のResultViewControllerを取得する
+    let nextViewController:NextViewController = segue.destination as! NextViewController
+    nextViewController.image = imageView.image!
+    }
     @IBAction func startButton(_ sender: Any) {
         
         
@@ -70,8 +78,12 @@ class ViewController: UIViewController {
     
     @IBAction func startStop(_ sender: Any) {
         
-        if timer == nil {
+        if (timer == nil) {
+            susumuButton.isEnabled = false
+            modoruButton.isEnabled = false
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil, repeats: true)
+            startStopButton.setTitle("停止", for: .normal)
+
             
         } else {
             if self.timer != nil {
@@ -79,6 +91,7 @@ class ViewController: UIViewController {
                 self.timer = nil
                 susumuButton.isEnabled = true
                 modoruButton.isEnabled = true
+                startStopButton.setTitle("再生", for: .normal)
             }
             
         }
@@ -93,8 +106,7 @@ class ViewController: UIViewController {
             imageIndex += 1
         }
         imageView.image = images[imageIndex]
-        susumuButton.isEnabled = false
-        modoruButton.isEnabled = false
+        
     }
     
     
